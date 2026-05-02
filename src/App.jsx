@@ -1,20 +1,15 @@
 
     import { useState } from "react";
-import ProductList from "./components/ProductList";
+import ProductList, { sampleProducts } from "./components/ProductList";
 import Cart from "./components/Cart";
 import DarkModeToggle from "./components/DarkModeToggle";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [cart, setCart] = useState([]);
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("All");
 
-  const products = [
-    { id: 1, name: "Apple", category: "fruit" },
-    { id: 2, name: "Banana", category: "fruit" },
-    { id: 3, name: "Carrot", category: "vegetable" },
-    { id: 4, name: "Broccoli", category: "vegetable" },
-  ];
+  const products = sampleProducts;
 
   function addToCart(product) {
     setCart([...cart, product]);
